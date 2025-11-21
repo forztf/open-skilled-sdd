@@ -179,7 +179,7 @@ Summarize the proposal clearly:
 - spec/changes/{change-id}/specs/{capability}/spec-delta.md
 
 **Next steps**:
-Review the proposal. If approved, say "implement it" or "apply the change" to begin implementation.
+Review the proposal. If approved, say "openspec implement" or "apply the change" to begin implementation.
 ```
 
 ## Advanced Topics
