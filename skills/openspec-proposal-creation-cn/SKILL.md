@@ -179,7 +179,7 @@ grep -n "### Requirement:" spec/changes/{change-id}/specs/**/*.md
 - spec/changes/{change-id}/specs/{capability}/spec-delta.md
 
 **下一步**：
-请评审提案。如认可，请回复 "实现提案" 或 "按顺序完成任务" 开始实施。
+请评审提案。如认可或修正后，请回复 "openspec开发" 或 "按顺序完成任务" 开始实施。
 ```
 
 ## 进阶主题

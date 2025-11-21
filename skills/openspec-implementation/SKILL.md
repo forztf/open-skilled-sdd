@@ -175,7 +175,7 @@ echo "Implementation completed: $(date)" > spec/changes/{change-id}/IMPLEMENTED
 **Tests**: All passing
 
 **Next step**: Archive this change to merge spec deltas into living documentation.
-Say "archive {change-id}" or "archive this change" when ready.
+Say "openspec archive {change-id}" or "archive this change" when ready.
 ```
 
 ## Best Practices

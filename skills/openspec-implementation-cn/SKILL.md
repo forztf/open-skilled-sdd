@@ -177,7 +177,7 @@ echo "Implementation completed: $(date)" > spec/changes/{change-id}/IMPLEMENTED
 **完成测试**：全部通过
 
 **下一步**：将该变更归档以合并规范差异到常驻文档。
-准备好后可回复 "归档 {change-id}" 或 "归档提案"。
+准备好后可回复 "openspec归档 {change-id}" 或 "归档提案"。
 ```
 
 ## 最佳实践
