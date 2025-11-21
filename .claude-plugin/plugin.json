@@ -17,13 +17,13 @@
     "documentation"
   ],
   "skills": [
-    "./skills/openspec-proposal-creation",
-    "./skills/openspec-implementation",
-    "./skills/openspec-archiving",
-    "./skills/openspec-context-loading",
     "./skills/openspec-proposal-creation-cn",
     "./skills/openspec-implementation-cn",
     "./skills/openspec-archiving-cn",
-    "./skills/openspec-context-loading-cn"
+    "./skills/openspec-context-loading-cn",
+    "./skills/openspec-proposal-creation",
+    "./skills/openspec-implementation",
+    "./skills/openspec-archiving",
+    "./skills/openspec-context-loading"
   ]
 }
