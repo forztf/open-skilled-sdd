@@ -57,16 +57,8 @@ Each skill has detailed documentation in its `SKILL.md` file.
    -> Press space to select  
    -> Press `i` to install in Claude Code.  
    Or install them one by one using commands:
-    
     ```
-    /plugin install openspec-proposal-creation@open-skilled-sdd-marketplace
-    /plugin install openspec-implementation@open-skilled-sdd-marketplace
-    /plugin install openspec-archiving@open-skilled-sdd-marketplace
-    /plugin install openspec-context-loading@open-skilled-sdd-marketplace
-    /plugin install openspec-proposal-creation-cn@open-skilled-sdd-marketplace
-    /plugin install openspec-implementation-cn@open-skilled-sdd-marketplace
-    /plugin install openspec-archiving-cn@open-skilled-sdd-marketplace
-    /plugin install openspec-context-loading-cn@open-skilled-sdd-marketplace
+    /plugin install open-skilled-sdd@open-skilled-sdd-marketplace
     ```
 
 ## License

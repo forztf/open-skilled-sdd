@@ -57,16 +57,9 @@
 -> `open-skilled-sdd-marketplace`  
 -> 按空格选中  
 ->  按 `i` 安装。  
-或用命令逐个安装
+或用命令安装
     ```
-    /plugin install openspec-proposal-creation@open-skilled-sdd-marketplace
-    /plugin install openspec-implementation@open-skilled-sdd-marketplace
-    /plugin install openspec-archiving@open-skilled-sdd-marketplace
-    /plugin install openspec-context-loading@open-skilled-sdd-marketplace
-    /plugin install openspec-proposal-creation-cn@open-skilled-sdd-marketplace
-    /plugin install openspec-implementation-cn@open-skilled-sdd-marketplace
-    /plugin install openspec-archiving-cn@open-skilled-sdd-marketplace
-    /plugin install openspec-context-loading-cn@open-skilled-sdd-marketplace
+    /plugin install open-skilled-sdd@open-skilled-sdd-marketplace
     ```
 
 ## 许可证
