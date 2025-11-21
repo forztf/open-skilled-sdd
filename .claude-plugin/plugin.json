@@ -1,0 +1,29 @@
+{
+  "name": "open-skilled-sdd",
+  "description": "Open Spec-driven development workflow for Claude Code: OpenSpec, PRPs, Spec Kit, spec-workflow-mcp, BMad-Method, 6A workflow.",
+  "version": "1.0.0",
+  "author": {
+    "name": "forztf"
+  },
+  "homepage": "https://github.com/forztf/open-skilled-sdd",
+  "license": "MIT",
+  "keywords": [
+    "specifications",
+    "spec-driven",
+    "requirements",
+    "EARS",
+    "workflow",
+    "testing",
+    "documentation"
+  ],
+  "skills": [
+    "./skills/openspec-proposal-creation",
+    "./skills/openspec-implementation",
+    "./skills/openspec-archiving",
+    "./skills/openspec-context-loading",
+    "./skills/openspec-proposal-creation-cn",
+    "./skills/openspec-implementation-cn",
+    "./skills/openspec-archiving-cn",
+    "./skills/openspec-context-loading-cn"
+  ]
+}

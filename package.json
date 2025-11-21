@@ -1,0 +1,42 @@
+{
+  "name": "open-skilled-sdd",
+  "version": "1.0.0",
+  "description": "open spec-driven development workflow: OpenSpec, PRPs, Spec Kit, spec-workflow-mcp, BMad-Method, 6A workflow",
+  "keywords": [
+    "claude-code",
+    "spec-driven",
+    "requirements",
+    "EARS",
+    "testing",
+    "TDD",
+    "openspec",
+    "cli"
+  ],
+  "bin": {
+    "open-skilled-sdd": "./bin/install.js"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    ".claude-plugin/",
+    "CLAUDE.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node bin/install.js --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forztf/open-skilled-sdd.git"
+  },
+  "author": "forztf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forztf/open-skilled-sdd/issues"
+  },
+  "homepage": "https://github.com/forztf/open-skilled-sdd#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,42 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated specs (user's project files)
+# These are created when users actually use the skills
+spec/
+!spec/.gitkeep
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Claude Code plugin installation artifacts
+# (created when plugin is installed in user projects)
+.claude/plugins/skilled-spec/
+.claude/skills/spec-proposal-creation/
+.claude/skills/spec-implementation/
+.claude/skills/spec-archiving/
+.claude/skills/spec-context-loading/

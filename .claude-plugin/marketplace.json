@@ -1,0 +1,14 @@
+{
+  "name": "open-skilled-sdd-marketplace",
+  "owner": {
+    "name": "forztf"
+  },
+  "description": "Official marketplace for Open Spec-Driven Development Claude Code plugin",
+  "plugins": [
+    {
+      "name": "open-skilled-sdd",
+      "source": "./",
+      "description": "open spec-driven development workflow: OpenSpec, PRPs, Spec Kit, spec-workflow-mcp, BMad-Method, 6A workflow"
+    }
+  ]
+}
