@@ -48,19 +48,26 @@ Each skill has detailed documentation in its `SKILL.md` file.
 
 **Plugin-based (Claude Code, auto-update)**:
 
-1.  Install the private marketplace repository:
-    Enter `/plugin marketplace add forztf/open-skilled-sdd` in Claude Code.
-2.  Install plugins:
-    Enter `/plugin` -> `1. Browse and install plugins` -> `open-skilled-sdd-marketplace` -> Press space to select -> Press `i` to install in Claude Code.
-    Or install them one by one using commands:
-    `/plugin install openspec-proposal-creation@open-skilled-sdd-marketplace`
-    `/plugin install openspec-implementation@open-skilled-sdd-marketplace`
-    `/plugin install openspec-archiving@open-skilled-sdd-marketplace`
-    `/plugin install openspec-context-loading@open-skilled-sdd-marketplace`
-    `/plugin install openspec-proposal-creation-cn@open-skilled-sdd-marketplace`
-    `/plugin install openspec-implementation-cn@open-skilled-sdd-marketplace`
-    `/plugin install openspec-archiving-cn@open-skilled-sdd-marketplace`
-    `/plugin install openspec-context-loading-cn@open-skilled-sdd-marketplace`
+1.  Install the private marketplace repository:  
+   `/plugin marketplace add forztf/open-skilled-sdd` in Claude Code.
+2.  Install plugins:  
+   `/plugin`  
+   -> `1. Browse and install plugins`  
+   -> `open-skilled-sdd-marketplace`  
+   -> Press space to select  
+   -> Press `i` to install in Claude Code.  
+   Or install them one by one using commands:
+    
+    ```
+    /plugin install openspec-proposal-creation@open-skilled-sdd-marketplace
+    /plugin install openspec-implementation@open-skilled-sdd-marketplace
+    /plugin install openspec-archiving@open-skilled-sdd-marketplace
+    /plugin install openspec-context-loading@open-skilled-sdd-marketplace
+    /plugin install openspec-proposal-creation-cn@open-skilled-sdd-marketplace
+    /plugin install openspec-implementation-cn@open-skilled-sdd-marketplace
+    /plugin install openspec-archiving-cn@open-skilled-sdd-marketplace
+    /plugin install openspec-context-loading-cn@open-skilled-sdd-marketplace
+    ```
 
 ## License
 
