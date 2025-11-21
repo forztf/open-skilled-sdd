@@ -34,7 +34,7 @@ My idea is to convert OpenSpec, PRPs, Spec Kit, spec-workflow-mcp, BMad-Method, 
 
 Each skill has detailed documentation in its `SKILL.md` file.
 
-## Usage
+## Install
 
 **Copy directly to project (Claude Code, simple)**:
 
