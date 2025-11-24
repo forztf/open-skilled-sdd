@@ -48,19 +48,50 @@
 
 **基于插件（Claude Code，自动更新）**：
 
-1. 安装私有的 marketplace 仓库：  
+1. 安装私有的 marketplace 仓库：
    在Claude Code中输入`/plugin marketplace add forztf/open-skilled-sdd`
-2. 安装插件：  
+2. 安装插件：
    在Claude Code中输入
-`/plugin`  
--> `1. Browse and install plugins`  
--> `open-skilled-sdd-marketplace`  
--> 按空格选中  
-->  按 `i` 安装。  
-或用命令安装
+   `/plugin`
+   -> `1. Browse and install plugins`
+   -> `open-skilled-sdd-marketplace`
+   -> 按空格选中
+   ->  按 `i` 安装。
+   或用命令安装
     ```
     /plugin install open-skilled-sdd@open-skilled-sdd-marketplace
     ```
+
+**其他Cli/IDE安装（支持AGENTS.md的Cli/IDE ）**：
+
+直接使用 npx 安装：
+```bash
+npx open-skilled-sdd              # 安装技能到 .claude/skills/
+npx open-skilled-sdd sync         # 同步技能到 AGENTS.md
+```
+
+或全局安装后使用：
+```bash
+npm install -g open-skilled-sdd
+
+open-skilled-sdd                  # 本地安装技能
+open-skilled-sdd install          # 显式安装命令
+open-skilled-sdd sync             # 同步到 AGENTS.md
+open-skilled-sdd --help           # 显示帮助
+```
+
+**同步技能到 AGENTS.md：**
+```bash
+open-skilled-sdd sync             # 自动同步所有技能（如AGENTS.md不存在则创建）
+open-skilled-sdd sync --yes       # 同上（--yes 标志已废弃）
+```
+
+**特性：**
+- 如 AGENTS.md 不存在，自动创建
+- 自动同步所有已安装技能到 AGENTS.md（默认为非交互式）
+- 更新现有技能部分或创建新的技能部分
+
+
 
 ## 许可证
 

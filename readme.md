@@ -48,18 +48,49 @@ Each skill has detailed documentation in its `SKILL.md` file.
 
 **Plugin-based (Claude Code, auto-update)**:
 
-1.  Install the private marketplace repository:  
+1.  Install the private marketplace repository:
    `/plugin marketplace add forztf/open-skilled-sdd` in Claude Code.
-2.  Install plugins:  
-   `/plugin`  
-   -> `1. Browse and install plugins`  
-   -> `open-skilled-sdd-marketplace`  
-   -> Press space to select  
-   -> Press `i` to install in Claude Code.  
+2.  Install plugins:
+   `/plugin`
+   -> `1. Browse and install plugins`
+   -> `open-skilled-sdd-marketplace`
+   -> Press space to select
+   -> Press `i` to install in Claude Code.
    Or install them one by one using commands:
     ```
     /plugin install open-skilled-sdd@open-skilled-sdd-marketplace
     ```
+
+**Other CLI/IDE Installation (for CLI/IDE that support AGENTS.md)**:
+
+Use npx for direct installation:
+```bash
+npx open-skilled-sdd        # Install skills to .claude/skills/
+npx open-skilled-sdd sync   # Sync skills to AGENTS.md
+```
+
+Or install globally then use the CLI:
+```bash
+npm install -g open-skilled-sdd
+
+open-skilled-sdd            # Install skills locally
+open-skilled-sdd install    # Explicit install command
+open-skilled-sdd sync       # Sync to AGENTS.md
+open-skilled-sdd --help     # Show help
+```
+
+**Sync Skills to AGENTS.md:**
+```bash
+open-skilled-sdd sync       # Auto-sync all skills (creates AGENTS.md if needed)
+open-skilled-sdd sync --yes # Same as above (deprecated flag)
+```
+
+**Features:**
+- Automatically creates AGENTS.md if it doesn't exist
+- Syncs all installed skills to AGENTS.md (non-interactive by default)
+- Updates existing skills section or creates new one
+
+
 
 ## License
 
