@@ -40,3 +40,26 @@ package-lock.json
 .claude/skills/spec-implementation/
 .claude/skills/spec-archiving/
 .claude/skills/spec-context-loading/
+.claude/settings.json
+.claude/skills/openspec-archiving/SKILL.md
+.claude/skills/openspec-archiving-cn/SKILL.md
+.claude/skills/openspec-context-loading/SKILL.md
+.claude/skills/openspec-context-loading-cn/SKILL.md
+.claude/skills/openspec-context-loading-cn/reference/SEARCH_PATTERNS.md
+.claude/skills/openspec-implementation/SKILL.md
+.claude/skills/openspec-implementation-cn/SKILL.md
+.claude/skills/openspec-implementation-cn/reference/TASK_PATTERNS.md
+.claude/skills/openspec-implementation-cn/reference/TESTING_STRATEGIES.md
+.claude/skills/openspec-proposal-creation/SKILL.md
+.claude/skills/openspec-proposal-creation/reference/EARS_FORMAT.md
+.claude/skills/openspec-proposal-creation/reference/VALIDATION_PATTERNS.md
+.claude/skills/openspec-proposal-creation/templates/proposal.md
+.claude/skills/openspec-proposal-creation/templates/spec-delta.md
+.claude/skills/openspec-proposal-creation/templates/tasks.md
+.claude/skills/openspec-proposal-creation-cn/SKILL.md
+.claude/skills/openspec-proposal-creation-cn/reference/EARS_FORMAT.md
+.claude/skills/openspec-proposal-creation-cn/reference/VALIDATION_PATTERNS.md
+.claude/skills/openspec-proposal-creation-cn/templates/proposal.md
+.claude/skills/openspec-proposal-creation-cn/templates/spec-delta.md
+.claude/skills/openspec-proposal-creation-cn/templates/tasks.md
+# Temporary or system files generated during development\nnul\n
