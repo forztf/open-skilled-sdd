@@ -61,7 +61,7 @@ Each skill has detailed documentation in its `SKILL.md` file.
     /plugin install open-skilled-sdd@open-skilled-sdd-marketplace
     ```
 
-**Other CLI/IDE Installation (for CLI/IDE that support AGENTS.md)**:
+**Other AI CLI/IDE Installation (for AI CLI/IDE that support AGENTS.md，Codex、Gemini、Cursor)**:
 
 Use npx for direct installation:
 ```bash

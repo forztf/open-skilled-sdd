@@ -62,9 +62,12 @@
     /plugin install open-skilled-sdd@open-skilled-sdd-marketplace
     ```
 
-**其他Cli/IDE安装（支持AGENTS.md的Cli/IDE ）**：
+**其他AI Cli/IDE安装（支持AGENTS.md的AI Cli/IDE，如Codex、Gemini、Cursor ）**：
+
+AGENTS.md 生态系统 - AI CLI/IDE 工具支持列表 https://l5cddvmqgoidg.ok.kimi.link/index.html
 
 直接使用 npx 安装：
+
 ```bash
 npx open-skilled-sdd              # 安装技能到 .claude/skills/
 npx open-skilled-sdd sync         # 同步技能到 AGENTS.md

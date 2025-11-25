@@ -11,10 +11,7 @@ const {
   parseCurrentSkills,
   removeSkillsSection,
 } = require('../lib/utils/agents-md');
-
-// Show deprecation warning
-console.log(chalk.yellow('⚠️  Warning: open-skilled-sdd-sync is deprecated.'));
-console.log(chalk.yellow("   Use 'open-skilled-sdd sync' instead.\n"));
+const { t } = require('../lib/localization');
 
 /**
  * Sync installed skills to AGENTS.md
@@ -22,16 +19,16 @@ console.log(chalk.yellow("   Use 'open-skilled-sdd sync' instead.\n"));
 async function syncAgentsMd(options = {}) {
   // Create AGENTS.md if it doesn't exist
   if (!existsSync('AGENTS.md')) {
-    console.log(chalk.blue('📄 Creating AGENTS.md...'));
+    console.log(chalk.blue(t('creatingAgentsMd')));
     writeFileSync('AGENTS.md', '# Project\n\n');
-    console.log(chalk.green('   ✓ Created AGENTS.md\n'));
+    console.log(chalk.green(t('createdAgentsMd') + '\n'));
   }
 
   let skills = findAllSkills();
 
   if (skills.length === 0) {
-    console.log('No skills installed. Install skills first:');
-    console.log(`  ${chalk.cyan('open-skilled-sdd')}`);
+    console.log(t('noSkillsInstalled'));
+    console.log(`  ${chalk.cyan(t('noSkillsCommand'))}`);
     return;
   }
 
@@ -47,9 +44,9 @@ async function syncAgentsMd(options = {}) {
     content.includes('<skills_system') || content.includes('<!-- SKILLS_TABLE_START -->');
 
   if (hadMarkers) {
-    console.log(chalk.green(`✅ Synced ${skills.length} skill(s) to AGENTS.md`));
+    console.log(chalk.green(t('syncComplete', { count: skills.length })));
   } else {
-    console.log(chalk.green(`✅ Added skills section to AGENTS.md (${skills.length} skill(s))`));
+    console.log(chalk.green(t('syncAddedSection', { count: skills.length })));
   }
 }
 
@@ -61,7 +58,7 @@ async function main() {
   try {
     await syncAgentsMd({ yes });
   } catch (error) {
-    console.error(chalk.red('Error syncing skills:'), error.message);
+    console.error(chalk.red(t('errorSyncSkills')), error.message);
     process.exit(1);
   }
 }

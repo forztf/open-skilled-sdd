@@ -21,8 +21,12 @@ yarn-error.log*
 
 # Generated specs (user's project files)
 # These are created when users actually use the skills
-spec/
-!spec/.gitkeep
+spec/changes/
+spec/archive/
+
+# Project specs - these document the project itself and should be version controlled
+# Keep spec/specs/ and other directories
+!spec/specs/
 
 # Node modules
 node_modules/
