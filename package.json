@@ -1,6 +1,6 @@
 {
   "name": "open-skilled-sdd",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "open spec-driven development workflow: OpenSpec, PRPs, Spec Kit, spec-workflow-mcp, BMad-Method, 6A workflow",
   "keywords": [
     "claude-code",

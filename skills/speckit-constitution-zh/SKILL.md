@@ -17,8 +17,37 @@ $ARGUMENTS
 
 遵循此执行流程：
 
-1. 将 `assets/specify/` 所有文件（包括子目录）按原目录结构复制到仓库根目录下的`.specify` 目录，只复制不存在的文件，不覆盖原有同名文件。
-   
+1. 将 `assets/specify/` 所有文件（包括子目录）按原目录结构复制到仓库根目录下的`.specify` 目录，跳过已有文件，**不能覆盖原有同名文件**。cp命令的 -n（--no-clobber）选项可以防止覆盖已存在的文件。
+在此阶段，您的项目文件夹内容应类似于以下内容：
+
+```text
+仓库根目录
+└── .specify
+    ├── memory
+    │  └── constitution.md
+    ├── scripts
+    │  ├──bash    
+    │  │  ├── check-prerequisites.sh
+    │  │  ├── common.sh
+    │  │  ├── create-new-feature.sh
+    │  │  ├── setup-plan.sh
+    │  │  └── update-claude-md.sh
+    │  ├──powershell    
+    │  │  ├── check-prerequisites.ps1
+    │  │  ├── common.ps1
+    │  │  ├── create-new-feature.ps1
+    │  │  ├── setup-plan.ps1
+    │  │  └── update-claude-md.ps1    
+    ├── specs
+    │  └── 001-create-taskify
+    │      └── spec.md
+    └── templates
+        ├── plan-template.md
+        ├── spec-template.md
+        └── tasks-template.md
+```
+
+
 2. 加载位于相对仓库根目录 `.specify/memory/constitution.md` 的现有章程模板。
    - 识别形式为 `[ALL_CAPS_IDENTIFIER]` 的每个占位符令牌。
      **重要**：用户可能需要比模板中使用的更少或更多的原则。如果指定了数量，请遵守该数量 - 遵循通用模板。您将相应地更新文档。
@@ -43,7 +72,6 @@ $ARGUMENTS
    - 读取 `.specify/templates/plan-template.md` 并确保任何"章程检查"或规则与更新的原则一致。
    - 读取 `.specify/templates/spec-template.md` 以对齐范围/要求——如果章程添加/删除强制性章节或约束则更新。
    - 读取 `.specify/templates/tasks-template.md` 并确保任务分类反映新增或删除的原则驱动任务类型（例如，可观察性、版本控制、测试纪律）。
-   - 读取 `.specify/templates/commands/*.md` 中的每个命令文件（包括本文件）以验证当需要通用指导时没有过时的引用（仅限特定代理名称如 CLAUDE）。
    - 读取任何运行时指导文档（例如 `README.md`、`docs/quickstart.md` 或存在的特定代理指导文件）。更新对已更改原则的引用。
 
 6. 生成同步影响报告（在更新后作为 HTML 注释预置在章程文件顶部）：

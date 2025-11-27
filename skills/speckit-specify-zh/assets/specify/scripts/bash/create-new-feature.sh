@@ -129,7 +129,7 @@ fi
 
 cd "$REPO_ROOT"
 
-SPECS_DIR="$REPO_ROOT/specs"
+SPECS_DIR="$REPO_ROOT/.specify/specs"
 mkdir -p "$SPECS_DIR"
 
 # 生成分支名称：包含停用词过滤与长度控制

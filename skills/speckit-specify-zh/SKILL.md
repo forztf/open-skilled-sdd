@@ -17,7 +17,36 @@ $ARGUMENTS
 
 根据该功能描述，请执行以下操作：
 
-1. 复制 `assets/specify/` 所有文件（包括子目录）按原目录结构复制到仓库根目录下的`.specify` 目录，只复制不存在的文件，不覆盖原有同名文件。
+1. 将 `assets/specify/` 所有文件（包括子目录）按原目录结构复制到仓库根目录下的`.specify` 目录，跳过已有文件，**不能覆盖原有同名文件**。cp命令的 -n（--no-clobber）选项可以防止覆盖已存在的文件。
+在此阶段，您的项目文件夹内容应类似于以下内容：
+
+```text
+仓库根目录
+└── .specify
+    ├── memory
+    │  └── constitution.md
+    ├── scripts
+    │  ├──bash    
+    │  │  ├── check-prerequisites.sh
+    │  │  ├── common.sh
+    │  │  ├── create-new-feature.sh
+    │  │  ├── setup-plan.sh
+    │  │  └── update-claude-md.sh
+    │  ├──powershell    
+    │  │  ├── check-prerequisites.ps1
+    │  │  ├── common.ps1
+    │  │  ├── create-new-feature.ps1
+    │  │  ├── setup-plan.ps1
+    │  │  └── update-claude-md.ps1    
+    ├── specs
+    │  └── 001-create-taskify
+    │      └── spec.md
+    └── templates
+        ├── plan-template.md
+        ├── spec-template.md
+        └── tasks-template.md
+```
+
 
 2. **生成一个简洁的短名称**（2-4个词）用于分支：
 
@@ -52,11 +81,11 @@ $ARGUMENTS
       - 找到最大数字N
       - 对于新分支使用N+1
 
-   d. 使用计算出的编号和短名称运行脚本 `.specify/scripts/powershell/create-new-feature.ps1 -Json "$ARGUMENTS"`：
+   d. 使用计算出的编号和短名称运行脚本 `create-new-feature.ps1 -Json "$ARGUMENTS"`：
 
       - 传递 `--number N+1` 和 `--short-name "your-short-name"` 以及功能描述
-      - Bash示例：`.specify/scripts/bash/create-new-feature.sh -Json "$ARGUMENTS" --json --number 5 --short-name "user-auth" "添加用户认证"`
-      - PowerShell示例：`.specify/scripts/powershell/create-new-feature.ps1 -Json "$ARGUMENTS" -Json -Number 5 -ShortName "user-auth" "添加用户认证"`
+      - Bash示例：`create-new-feature.sh -Json "$ARGUMENTS" --json --number 5 --short-name "user-auth" "添加用户认证"`
+      - PowerShell示例：`create-new-feature.ps1 -Json "$ARGUMENTS" -Json -Number 5 -ShortName "user-auth" "添加用户认证"`
 
    **重要**：
 

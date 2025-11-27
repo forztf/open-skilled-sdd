@@ -39,6 +39,7 @@ package-lock.json
 
 # Claude Code plugin installation artifacts
 # (created when plugin is installed in user projects)
+.claude/
 .claude/plugins/skilled-spec/
 .claude/skills/spec-proposal-creation/
 .claude/skills/spec-implementation/
@@ -67,3 +68,4 @@ package-lock.json
 .claude/skills/openspec-proposal-creation-cn/templates/spec-delta.md
 .claude/skills/openspec-proposal-creation-cn/templates/tasks.md
 # Temporary or system files generated during development\nnul\n
+*.tgz
