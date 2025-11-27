@@ -30,7 +30,14 @@
 |                  | **openspec-implementation-cn**    | "openspec开发"                                       | 以测试与进度跟踪的方式执行任务 |
 |                  | **openspec-archiving-cn**         | "openspec归档"                                       | 合并规范差异并创建归档         |
 |                  | **openspec-context-loading-cn**   | "openspec有哪些规范"、"openspec显示变更"             | 发现规范、搜索需求、展示仪表盘 |
-|                  |                                   |                                                      |                                |
+| speckit（中文）  | **speckit-constitution-zh**       | "speckit章程"、"创建章程"、"更新章程"               | 创建/更新项目章程并同步模板    |
+|                  | **speckit-specify-zh**            | "speckit规范"、"创建规范"、"speckit-specify"        | 将功能描述转为结构化规范并初始化 |
+|                  | **speckit-clarify-zh**            | "speckit-clarify"、"规范澄清"、"识别模糊点"         | 识别歧义并以问答方式完善规范   |
+|                  | **speckit-plan-zh**               | "speckit计划"                                       | 生成实施计划与设计工件         |
+|                  | **speckit-tasks-zh**              | "speckit tasks"、"生成任务"、"创建tasks.md"        | 生成依赖有序的任务清单         |
+|                  | **speckit-analyze-zh**            | "speckit-analyze"、"speckit分析"、"规范分析"       | 只读分析 spec/plan/tasks 一致性 |
+|                  | **speckit-checklist-zh**          | "speckit-checklist"、"检查清单"、"需求验证"        | 生成需求质量检查清单           |
+|                  | **speckit-implement-zh**          | "speckit-implement"、"speckit开发"、"实施"         | 按任务顺序实施并验证功能       |
 
 每个技能都在其 `SKILL.md` 文件中具备详细文档。
 

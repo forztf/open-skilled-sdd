@@ -11,7 +11,7 @@ const {
   parseCurrentSkills,
   removeSkillsSection,
 } = require('../lib/utils/agents-md');
-const { t } = require('../lib/localization');
+const { t, currentLang } = require('../lib/localization');
 
 /**
  * Sync installed skills to AGENTS.md
@@ -34,7 +34,7 @@ async function syncAgentsMd(options = {}) {
 
   // Note: Interactive mode is no longer supported
   // Default behavior is --yes (sync all skills)
-  const xml = generateSkillsXml(skills);
+  const xml = generateSkillsXml(skills, currentLang);
   const content = readFileSync('AGENTS.md', 'utf-8');
   const updated = replaceSkillsSection(content, xml);
 

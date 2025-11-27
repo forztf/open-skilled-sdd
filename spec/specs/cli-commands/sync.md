@@ -2,6 +2,10 @@
 
 This document specifies the command-line interface (CLI) for open-skilled-sdd.
 
+**Related Changes**:
+- `localize-agents-md-usage` (2025-11-25): Implemented AGENTS.md usage guide localization
+- See archive: `spec/archive/2025-11-25-localize-agents-md-usage/`
+
 ## sync Command
 
 `open-skilled-sdd sync` - Synchronizes project-local skills to AGENTS.md

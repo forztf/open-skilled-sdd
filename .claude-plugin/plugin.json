@@ -24,6 +24,14 @@
     "./skills/openspec-proposal-creation",
     "./skills/openspec-implementation",
     "./skills/openspec-archiving",
-    "./skills/openspec-context-loading"
+    "./skills/openspec-context-loading",
+    "./skills/speckit-constitution-zh",
+    "./skills/speckit-specify-zh",
+    "./skills/speckit-clarify-zh",
+    "./skills/speckit-plan-zh",
+    "./skills/speckit-tasks-zh",
+    "./skills/speckit-analyze-zh",
+    "./skills/speckit-checklist-zh",
+    "./skills/speckit-implement-zh"
   ]
 }
