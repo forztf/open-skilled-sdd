@@ -40,7 +40,7 @@ description: 归档已完成的变更并将规范差异合并到常驻文档。�
 test -f spec/changes/{change-id}/IMPLEMENTED && echo "✓ 已实施" || echo "✗ 未实施"
 
 # 查看任务
-cat spec/changes/{change-id}/tasks.md
+cat spec/changes/{change-id}/tasks.json
 
 # 使用 git 检查未提交工作
 git status

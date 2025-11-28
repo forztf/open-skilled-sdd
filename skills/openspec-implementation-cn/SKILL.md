@@ -40,7 +40,7 @@ description: 以测试与验证为先的方式，按序执行并实现已批准�
 cat spec/changes/{change-id}/proposal.md
 
 # 读取所有任务
-cat spec/changes/{change-id}/tasks.md
+cat spec/changes/{change-id}/tasks.json
 
 # 读取规范差异以理解需求
 find spec/changes/{change-id}/specs -name "*.md" -exec cat {} \;
@@ -52,42 +52,56 @@ find spec/changes/{change-id}/specs -name "*.md" -exec cat {} \;
 - 哪些规范将被影响
 - 验收标准（来自场景）
 
-### 第 2 步：设置 TodoWrite 任务跟踪
+### 第 2 步：设置 TodoWrite 进行任务跟踪
 
-在开始工作之前，将 tasks.md 中的任务加载到 TodoWrite：
+在开始工作之前，将 tasks.json 中的task和step加载到 TodoWrite：
 
 ```markdown
 **模式**：
-读取 tasks.md → 提取编号列表 → 创建 TodoWrite 条目
+读取 tasks.json → 提取task和step列表 → 创建 TodoWrite 条目
 
 **示例**：
-假设 tasks.md 包含：
-1. 创建数据库迁移
-2. 实现 API 端点
-3. 添加测试
-4. 更新文档
+假设 tasks.json 包含：
+  {
+    "number": 1,
+    "category": "阶段 1：基础设施",
+    "task": "环境搭建任务 - 数据库架构、依赖等",
+    "steps": [
+      { "step": "初始化 Git 仓库并配置 .gitignore", "completed": false },
+      { "step": "创建并激活 Python 虚拟环境", "completed": false },
+      { "step": "创建 requirements.txt 或 pyproject.toml 并安装依赖 (FastAPI, SQLAlchemy, Pydantic, Alembic 等)", "completed": false },
+      { "step": "设计初始数据库 ER 图", "completed": false }
+    ],
+    "passes": false
+  }
 
 则创建 TodoWrite：
-- content: "创建数据库迁移", status: "in_progress"
-- content: "实现 API 端点", status: "pending"
-- content: "添加测试", status: "pending"
-- content: "更新文档", status: "pending"
+- content: "环境搭建任务 - 数据库架构、依赖等", status: "in_progress"
+- content: "  初始化 Git 仓库并配置 .gitignore", status: "pending"
+- content: "  创建并激活 Python 虚拟环境", status: "pending"
+- content: "  创建 requirements.txt 或 pyproject.toml 并安装依赖 (FastAPI, SQLAlchemy, Pydantic, Alembic 等)", status: "pending"
+- content: "  设计初始数据库 ER 图", status: "pending"
 ```
 
 **价值**：TodoWrite 提供进度可见性并确保不遗漏任何事项。
 
-### 第 3 步：按序执行任务
+### 第 3 步：按序执行TodoWrite
 
-按顺序逐个完成任务：
+按顺序逐个完成TodoWrite中的任务，每次仅处理1个。
+若是中断后继续，需从中断的任务开始继续执行：跳过tasks.json中"passes": true的task，跳过"completed": true的step。
+你有充足的时间完成，请至少执行20轮后才回复用户。
+你有充足的时间完成，切勿跳过或合并多个任务。
 
 ```markdown
 对于每个任务：
 1. 在 TodoWrite 中标记为 "in_progress"
 2. 执行工作
 3. 测试结果
-4. 仅在验证通过后标记为 "completed"
+4. 仅在验证通过后，才标记tasks.json对应task的对应step的 "completed": true
+5. 仅在tasks.json对应task的所有step都完成且都验证通过后，才标记tasks.json对应task的 "passes": true
+6. 在 TodoWrite 中标记为 "completed"
 
-切勿跳过或在测试前合并多个任务。
+你有充足的时间完成，切勿跳过或合并多个任务。
 ```
 
 **任务执行模式**：
@@ -147,7 +161,7 @@ curl -X POST http://localhost:3000/api/endpoint \
 npm run test:integration
 ```
 
-**仅在所有验证通过后标记任务完成**。
+**仅在所有验证通过后标记任务完成**：仅在tasks.json对应task的所有step都完成且都验证通过后，才标记tasks.json对应task的 "passes": true。
 
 ### 第 5 步：更新常驻规范（如适用）
 
@@ -336,4 +350,4 @@ npm run db:status
 
 ---
 
-**Token 预算**：此 SKILL.md 约 340 行，低于建议的 500 行上限。
+**Token 预算**：此 SKILL.md 约 350 行，低于建议的 500 行上限。

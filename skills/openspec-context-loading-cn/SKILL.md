@@ -230,7 +230,7 @@ echo "=== 提案 ==="
 cat spec/changes/$CHANGE_ID/proposal.md
 
 echo "\n=== 任务 ==="
-cat spec/changes/$CHANGE_ID/tasks.md
+cat spec/changes/$CHANGE_ID/tasks.json
 
 echo "\n=== 规范变更 ==="
 find spec/changes/$CHANGE_ID/specs -name "*.md" -exec echo "File: {}" \; -exec cat {} \;
@@ -381,7 +381,7 @@ for change in spec/changes/*/; do
         id=$(basename "$change")
         echo "$id:"
         test -f "$change/IMPLEMENTED" && echo "  状态: 已完成" || echo "  状态: 进行中"
-        echo "  任务: $(grep -c "^[0-9]\+\." "$change/tasks.md")"
+        echo "  任务: $(grep -c '"task":' "$change/tasks.json")"
     fi
 done
 ```

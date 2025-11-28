@@ -11,7 +11,7 @@ description: 通过openspec规范驱动的方法创建结构化的变更提案�
 
 创建规范提案包含三类输出：
 1. **proposal.md** - 为什么、做什么、影响摘要
-2. **tasks.md** - 编号的实施清单
+2. **tasks.json** - 编号的实施清单
 3. **spec-delta.md** - 正式的需求变更（ADDED/MODIFIED/REMOVED）
 
 **基本流程**：生成变更 ID → 脚手架目录 → 起草提案 → 编写规范差异 → 验证结构
@@ -26,7 +26,7 @@ description: 通过openspec规范驱动的方法创建结构化的变更提案�
 - [ ] 第 2 步：生成唯一的变更 ID
 - [ ] 第 3 步：生成目录结构
 - [ ] 第 4 步：起草 proposal.md（为什么、做什么、影响摘要）
-- [ ] 第 5 步：创建 tasks.md 实施清单
+- [ ] 第 5 步：创建 tasks.json 实施清单
 - [ ] 第 6 步：编写 spec-delta.md 规范差异（ADDED/MODIFIED/REMOVED）
 - [ ] 第 7 步：验证提案结构
 - [ ] 第 8 步：向用户展示并请求审批
@@ -89,25 +89,42 @@ mkdir -p spec/changes/add-user-auth/specs/authentication
 
 **语气**：清晰、简洁、面向决策。避免不必要背景。
 
-### 第 5 步：创建 tasks.md 实施清单
+### 第 5 步：创建 tasks.json 实施清单
 
-将实现拆分为具体、可测试的任务。使用 [templates/tasks.md](templates/tasks.md)。
+将实现拆分为具体、可测试的任务。使用 [templates/tasks.json](templates/tasks.json)。
 
 **格式**：
 ```markdown
-# Implementation Tasks
+# 实施任务
+```json
+[
+  {
+    "number": 1,
+    "category": "阶段 1：基础设施",
+    "task": "环境搭建任务 - 数据库架构、依赖等",
+    "steps": [
+      { "step": "初始化 Git 仓库并配置 .gitignore", "completed": false },
+      { "step": "创建并激活 Python 虚拟环境", "completed": false },
+      { "step": "创建 requirements.txt 或 pyproject.toml 并安装依赖 (FastAPI, SQLAlchemy, Pydantic, Alembic 等)", "completed": false },
+      { "step": "设计初始数据库 ER 图", "completed": false },
+      { "step": "配置数据库连接字符串和环境变量 (.env)", "completed": false },
+      { "step": "初始化 Alembic 迁移环境", "completed": false }
+    ],
+    "passes": false
+  }
+]
 
-1. [第一个具体任务]
-2. [第二个具体任务]
-3. [测试任务]
-4. [文档任务]
-```
 
 **最佳实践**：
 - 每个任务可独立完成
+- 为每个主要组件添加测试任务
+- 为每个主要组件添加测试任务
 - 包含测试与验证任务
 - 按依赖排序（数据库先于 API 等）
 - 通常 5-15 个任务；更多时应拆分
+- 每次仅处理1个step
+
+```
 
 ### 第 6 步：以 EARS 格式编写规范差异
 
@@ -145,7 +162,7 @@ AND 重定向至仪表盘
 结构清单：
 - [ ] 目录存在：`spec/changes/{change-id}/`
 - [ ] proposal.md 包含 Why/What/Impact
-- [ ] tasks.md 含编号任务列表（5-15 项）
+- [ ] tasks.json 含编号任务列表（5-15 项）
 - [ ] 规范差异包含操作标题（ADDED/MODIFIED/REMOVED）
 - [ ] 需求遵循 `### Requirement: <name>` 格式
 - [ ] 场景使用 `#### Scenario:` 格式（四个井号）
@@ -175,7 +192,7 @@ grep -n "### Requirement:" spec/changes/{change-id}/specs/**/*.md
 
 **创建的文件**：
 - spec/changes/{change-id}/proposal.md
-- spec/changes/{change-id}/tasks.md
+- spec/changes/{change-id}/tasks.json
 - spec/changes/{change-id}/specs/{capability}/spec-delta.md
 
 **下一步**：
@@ -203,14 +220,14 @@ grep -n "### Requirement:" spec/changes/{change-id}/specs/**/*.md
 - 使用 `MODIFIED Requirements` 差异
 - 包含完整更新后的需求文本
 - 在 proposal.md 中说明变更内容与原因
-- 在 tasks.md 中考虑迁移任务
+- 在 tasks.json 中考虑迁移任务
 
 ### 模式 3：弃用提案
 
 移除功能时：
 - 使用 `REMOVED Requirements` 差异
 - 在 proposal.md 中记录移除理由
-- 在 tasks.md 中包含清理任务
+- 在 tasks.json 中包含清理任务
 - 在影响部分考虑用户迁移
 
 ## 反模式避免
@@ -234,7 +251,7 @@ grep -n "### Requirement:" spec/changes/{change-id}/specs/**/*.md
 
 所有模板位于 `templates/` 目录：
 - [proposal.md](templates/proposal.md) - 提案结构
-- [tasks.md](templates/tasks.md) - 任务清单格式
+- [tasks.json](templates/tasks.json) - 任务清单格式
 - [spec-delta.md](templates/spec-delta.md) - 规范差异模板
 
 ## 参考资料

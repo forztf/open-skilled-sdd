@@ -48,11 +48,11 @@ grep -c "## Impact" spec/changes/{change-id}/proposal.md
 ### 验证任务文件
 
 ```bash
-# 统计编号任务数量
-grep -c "^[0-9]\+\." spec/changes/{change-id}/tasks.md
+# 统计任务数量
+grep -c '"task":' spec/changes/{change-id}/tasks.json
 
 # 显示任务列表
-grep "^[0-9]\+\." spec/changes/{change-id}/tasks.md
+grep '"task":' spec/changes/{change-id}/tasks.json
 ```
 
 **预期**：通常为 5-15 个任务
@@ -156,7 +156,7 @@ fi
 echo "✓ 变更目录存在"
 
 # 2. 必需文件存在
-for file in proposal.md tasks.md; do
+for file in proposal.md tasks.json; do
     if [ ! -f "$BASE_PATH/$file" ]; then
         echo "✗ 缺少 $file"
         exit 1
@@ -173,10 +173,10 @@ for section in "## Why" "## What Changes" "## Impact"; do
 done
 echo "✓ proposal.md 包含所需章节"
 
-# 4. 任务文件包含编号任务
-TASK_COUNT=$(grep -c "^[0-9]\+\." "$BASE_PATH/tasks.md" || echo "0")
+# 4. 任务文件包含 'task' 键
+TASK_COUNT=$(grep -c '"task":' "$BASE_PATH/tasks.json" || echo "0")
 if [ "$TASK_COUNT" -lt 3 ]; then
-    echo "✗ tasks.md 任务数量不足（$TASK_COUNT）"
+    echo "✗ tasks.json 任务数量不足（$TASK_COUNT）"
     exit 1
 fi
 echo "✓ 找到 $TASK_COUNT 个任务"
@@ -268,7 +268,7 @@ done
 # 快速验证变更结构
 CHANGE_ID="add-user-auth" && \
 test -f spec/changes/$CHANGE_ID/proposal.md && \
-test -f spec/changes/$CHANGE_ID/tasks.md && \
+test -f spec/changes/$CHANGE_ID/tasks.json && \
 grep -q "## ADDED\|MODIFIED\|REMOVED" spec/changes/$CHANGE_ID/specs/**/*.md && \
 grep -q "### Requirement:" spec/changes/$CHANGE_ID/specs/**/*.md && \
 grep -q "#### Scenario:" spec/changes/$CHANGE_ID/specs/**/*.md && \
@@ -282,7 +282,7 @@ echo "✓ 所有验证通过" || echo "✗ 验证失败"
 CHANGE_ID="add-user-auth"
 echo "提案：$CHANGE_ID"
 echo "文件数：$(find spec/changes/$CHANGE_ID -type f | wc -l)"
-echo "任务数：$(grep -c \"^[0-9]\\+\.\" spec/changes/$CHANGE_ID/tasks.md)"
+echo "任务数：$(grep -c '\"task\":' spec/changes/$CHANGE_ID/tasks.json)"
 echo "需求数：$(grep -h \"### Requirement:\" spec/changes/$CHANGE_ID/specs/**/*.md | wc -l)"
 echo "场景数：$(grep -h \"#### Scenario:\" spec/changes/$CHANGE_ID/specs/**/*.md | wc -l)"
 ```
@@ -297,12 +297,12 @@ echo "场景数：$(grep -h \"#### Scenario:\" spec/changes/$CHANGE_ID/specs/**/
 - [ ] proposal.md 的 Why 部分解释问题
 - [ ] proposal.md 的 What 部分列出具体变更
 - [ ] proposal.md 的 Impact 部分标识受影响区域
-- [ ] tasks.md 含 5-15 个具体、可测试的任务
+- [ ] tasks.json 含 5-15 个具体、可测试的任务
 - [ ] 任务按依赖顺序排列
 
 自动检查：
 - [ ] 目录结构存在
-- [ ] 必需文件存在（proposal.md、tasks.md、spec-delta.md）
+- [ ] 必需文件存在（proposal.md、tasks.json、spec-delta.md）
 - [ ] 差异操作存在（ADDED/MODIFIED/REMOVED）
 - [ ] 需求遵循格式：`### Requirement: 名称`
 - [ ] 场景遵循格式：`#### Scenario: 名称`
